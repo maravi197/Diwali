@@ -1,6 +1,3 @@
-// diwali.cpp — cmatrix-style terminal tool, but Diwali firecracker style
-// Compile: g++ -O2 -Wall diwali.cpp -o diwali -lncurses
-// Run:     ./diwali        (press 'q' to quit)
 
 #include <ncurses.h>
 #include <vector>
@@ -9,7 +6,7 @@
 #include <ctime>
 #include <cmath>
 
-using namespace std; // Namespace added for simpler code
+using namespace std; 
 
 #ifndef M_PI
 #define M_PI 3.14159265358979323846
@@ -25,7 +22,6 @@ struct Particle {
     bool has_split;
 };
 
-// A small, short-lived patch of "ambient light" near a burst.
 struct Glow {
     double cx, cy;
     double radius;
@@ -238,12 +234,11 @@ int main() {
         drawParticles(max_x, max_y);
 
         attron(COLOR_PAIR(6) | A_BOLD);
-        mvprintw(max_y - 1, 0, "Happy Diwali! (press q to quit)");
         attroff(COLOR_PAIR(6) | A_BOLD);
 
         refresh();
         napms(25);
-    } // Maine is missing bracket ko fix kar diya hai
+    } 
 
     endwin();
     return 0;
